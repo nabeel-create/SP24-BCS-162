@@ -1,0 +1,86 @@
+# ============================================================
+#  pubspec.yaml — Flutter Project Configuration
+#  Project : Dice Roller Plus
+#  Student : Nabeel
+#  Quiz 1  : Simple Dice App — Flutter Translation
+#
+#  This is a Flutter replica of the Expo "Dice-Roller-Plus" app.
+# ============================================================
+
+name: dice_roller_plus
+description: >
+  A beautiful dice rolling app — Flutter replica of Dice-Roller-Plus.
+  Features: animated dice, roll history, statistics, per-face colors.
+
+publish_to: 'none'   # Do not publish to pub.dev
+version: 1.0.0+1
+
+# ─── SDK Constraints ──────────────────────────────────────────
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+# ─── Dependencies ─────────────────────────────────────────────
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6   # iOS-style icon set
+  audioplayers: ^6.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0     # Flutter recommended lint rules
+
+# ─── Flutter Section ──────────────────────────────────────────
+flutter:
+  uses-material-design: true
+
+  # ── Dice Image Assets ──────────────────────────────────────
+  # Images must be placed in: /assets/images/
+  # File names must match exactly (1.png … 6.png)
+  # matching the DICE_IMAGES map in the original Expo app.
+  #
+  # These images are already generated and included in this
+  # project folder.
+  assets:
+    - assets/images/1.png      # Face showing 1 pip
+    - assets/images/2.png      # Face showing 2 pips
+    - assets/images/3.png      # Face showing 3 pips
+    - assets/images/4.png      # Face showing 4 pips
+    - assets/images/5.png      # Face showing 5 pips
+    - assets/images/6.png      # Face showing 6 pips
+    - assets/images/app_icon.png    # App icon
+    - assets/sounds/
+
+  # ── Custom Font: Poppins ───────────────────────────────────
+  # Download from: https://fonts.google.com/specimen/Poppins
+  # Extract the ZIP and copy these exact .ttf files to:
+  #   Nabeel/assets/fonts/
+  #
+  # The original Expo app uses these exact Poppins weights:
+  #   Poppins_400Regular  → body text, hints, timestamps
+  #   Poppins_500Medium   → tab labels
+  #   Poppins_600SemiBold → pills, small labels
+  #   Poppins_700Bold     → app title, numbers, badge values
+  #   Poppins_800ExtraBold → large "You rolled 4" number display
+  fonts:
+    - family: Poppins
+      fonts:
+        # Regular (400)
+        - asset: assets/fonts/Poppins-Regular.ttf
+
+        # Medium (500) — tab labels
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+
+        # SemiBold (600) — roll pill, badge labels
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+
+        # Bold (700) — title, roll button, stat numbers
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
+
+        # ExtraBold (800) — large "4" value display (valueBig in Expo)
+        - asset: assets/fonts/Poppins-ExtraBold.ttf
+          weight: 800
