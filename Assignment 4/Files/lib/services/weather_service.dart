@@ -4,7 +4,8 @@ import '../models/weather_models.dart';
 
 class WeatherService {
   static const String _baseUrl = '/api';
-
+final String apiKey = '2bff7a29bf103cf0d38e5d2876c36170';
+  final String baseUrl = 'https://api.openweathermap.org/data/2.5';
   static Future<WeatherBundle> fetchWeather(double lat, double lon) async {
     final uri = Uri.parse('$_baseUrl/weather?lat=$lat&lon=$lon');
     final res = await http.get(uri);
